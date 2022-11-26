@@ -2,7 +2,6 @@ import React from 'react';
 import { useLocation } from 'react-router-dom'
 import Component from '../components/Star';
 import LikeButton from '../components/LikeButton';
-import './MovieDetail.css';
 
 
 export default function MovieDetail() {
@@ -10,11 +9,11 @@ export default function MovieDetail() {
 
   
 
-
+    
   return (
     <div className="page-container">
       <div style={{display: 'flex'}}>
-        <img style={{width: '300px', height: '450px'}} src={state.poster_url} alt='영화 포스터 이미지' />
+      <a href={state.youtube_trailer_url}><img style={{width: '300px', height: '450px'}} src={state.poster_url} alt='영화 포스터 이미지' /></a>
         <div>
           <div style={{ fontSize: "32px" }}>{state.title}</div>
           <div style={{ fontSize: "20px" }}><b>가격:</b> {state.price}원</div>
@@ -29,10 +28,9 @@ export default function MovieDetail() {
           <div style={{ fontSize: "20px" }}><b>주연배우:</b> {state.actors}<br /></div>
           <div style={{ fontSize: "20px" }}><b>줄거리:</b> {state.summary}</div>
           <div style={{ fontSize: "20px" }}><b>수상대회:</b> {state.awards}</div>
-          <button onClick={state.youtube_trailer_url}>유튜브</button>
         </div>
       </div>
-      <div>평점:<Component />
+      <div><Component />
       <LikeButton />
       </div>
     </div>
