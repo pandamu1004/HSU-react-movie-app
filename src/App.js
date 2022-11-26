@@ -4,6 +4,8 @@ import MovieInfo from "./pages/MovieInfo";
 
 function App() {
   return (
+    <div>
+    </div>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Main />} />
